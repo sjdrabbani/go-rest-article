@@ -6,8 +6,13 @@ import (
 	"net/http"
 )
 
-func homePage(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome to the HomePage!")
+type Article struct {
+	Title string 'json:"title"'
+	Desc string 'json:"desc"'
+	Content string 'json:"content"'
+}
+
+func homePage(w http.ResponseWriter, r *http.Request) {	
 	fmt.Println("Endpoint Hit: homePage")
 }
 
